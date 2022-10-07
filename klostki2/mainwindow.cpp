@@ -4,7 +4,7 @@
 #include <QTextStream>
 #include <QVector>
 #include <QtDebug>
-#include "mainwindow.h"//双引号的头文件放到最后
+#include "mainwindow.h"
 #include "./ui_mainwindow.h"
 
 MainWindow::MainWindow(QWidget *parent)
@@ -19,11 +19,11 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::readfile(){//这个函数实现应该挪到cpp里面。
-QFile file("../klostki2/result.txt");//用相对路径，不要用绝对路径
+void MainWindow::readfile(){
+QFile file("../klostki2/result.txt");
    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
            return;
-       QTextStream in(&file);//头文件没有加
+       QTextStream in(&file);
        while (!in.atEnd()) {
            QString line = in.readLine();
            //std::string comm = line.toStdString();
